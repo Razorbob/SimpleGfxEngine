@@ -4,17 +4,35 @@
 //
 //  Created by Vincent Dibon on 15.08.20.
 //
+import MetalKit
 
-import UIKit
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("Hello World")
+class ViewController: MTKView{
+    
+    var renderer: Renderer!
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        
+        
+        // create the GPU Representation
+        self.device = MTLCreateSystemDefaultDevice()
+        
+        //Set Pixel Format to four 8-bit normalized unsigned integer components in Blue Green Red Alpha (BGRA) order.
+        self.colorPixelFormat = .bgra8Unorm
+        
+        //Set the clear Color. Before the Frame gets drawn it is set to its clearColor
+        self.clearColor = MTLClearColor(red: 0.2, green: 0.2, blue: 0.8 , alpha: 1)
+        
+        self.renderer = Renderer(device: self.device!)
+        
+        
     }
-
-
+    
+    override func draw(_ rect: CGRect) {
+        print("draw")
+    }
+    
+    
 }
 
