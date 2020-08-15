@@ -15,6 +15,7 @@
 		310C2CD524E7F5700051F0A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310C2CD324E7F5700051F0A0 /* LaunchScreen.storyboard */; };
 		310C2CDD24E7FC5B0051F0A0 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CDC24E7FC5B0051F0A0 /* Renderer.swift */; };
 		310C2CDF24E80C8D0051F0A0 /* MyMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CDE24E80C8D0051F0A0 /* MyMetalView.swift */; };
+		310C2CE124E8198D0051F0A0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CE024E8198D0051F0A0 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		310C2CD624E7F5700051F0A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		310C2CDC24E7FC5B0051F0A0 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		310C2CDE24E80C8D0051F0A0 /* MyMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMetalView.swift; sourceTree = "<group>"; };
+		310C2CE024E8198D0051F0A0 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				310C2CD624E7F5700051F0A0 /* Info.plist */,
 				310C2CDC24E7FC5B0051F0A0 /* Renderer.swift */,
 				310C2CDE24E80C8D0051F0A0 /* MyMetalView.swift */,
+				310C2CE024E8198D0051F0A0 /* Shaders.metal */,
 			);
 			path = SimpleGfxEngine;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				310C2CE124E8198D0051F0A0 /* Shaders.metal in Sources */,
 				310C2CDD24E7FC5B0051F0A0 /* Renderer.swift in Sources */,
 				310C2CCD24E7F56B0051F0A0 /* ViewController.swift in Sources */,
 				310C2CDF24E80C8D0051F0A0 /* MyMetalView.swift in Sources */,

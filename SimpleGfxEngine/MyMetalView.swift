@@ -9,6 +9,7 @@ import MetalKit
 
 class MyMetalView: MTKView{
     
+    
     var renderer: Renderer!
     
     required init(coder: NSCoder) {
