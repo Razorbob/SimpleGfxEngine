@@ -19,6 +19,8 @@ class Renderer: NSObject{
     var vertices: [Vertex]!
     var indices: [UInt16]!
     
+    var constants = Constants()
+    
     init(device: MTLDevice){
         self.device = device
         super.init()
@@ -102,8 +104,13 @@ extension Renderer: MTKViewDelegate{
         
         commandEncoder?.setRenderPipelineState(renderPipelineState)
         
+        
+        let deltaTime = 1 / Float(view.preferredFramesPerSecond)
+        constants.animateBy += deltaTime
+        print(constants.animateBy)
         //Command Encoder Stuff
         commandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        commandEncoder?.setVertexBytes(&constants, length: MemoryLayout<Constants>.stride, index: 1)
         
         
         commandEncoder?.drawIndexedPrimitives(type: .triangle, indexCount: indices.count, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)

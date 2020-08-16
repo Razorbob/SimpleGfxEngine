@@ -11,3 +11,7 @@ struct Vertex{
     var position: SIMD3<Float>
     var color: SIMD4<Float>
 }
+
+struct Constants{
+    var animateBy: Float = 0.5
+}

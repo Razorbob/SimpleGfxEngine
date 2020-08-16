@@ -19,12 +19,16 @@ struct Vertex_Out{
     simd_float4 color;
 };
 
+struct Constants{
+    float animateBy;
+};
 
-
-vertex Vertex_Out basic_Vertex_Function(Vertex_In vert [[ stage_in ]]) {
+vertex Vertex_Out basic_Vertex_Function(Vertex_In vert [[ stage_in ]], constant Constants &constants [[ buffer(1) ]]) {
     
     Vertex_Out v;
     v.position =float4(vert.position,1);
+    v.position.xy += cos(constants.animateBy);
+    v.position.y += sin(constants.animateBy);
     v.color = vert.color;
     return v;
 }
