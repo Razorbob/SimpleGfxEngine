@@ -10,8 +10,8 @@ using namespace metal;
 
 
 struct Vertex_In{
-    simd_float3 position;
-    simd_float4 color;
+    simd_float3 position [[attribute(0)]];
+    simd_float4 color [[attribute(1)]];
 };
 
 struct Vertex_Out{
@@ -21,11 +21,11 @@ struct Vertex_Out{
 
 
 
-vertex Vertex_Out basic_Vertex_Function(const device Vertex_In *vertices [[ buffer(0) ]], uint vertexID [[ vertex_id ]] ) {
+vertex Vertex_Out basic_Vertex_Function(Vertex_In vert [[ stage_in ]]) {
     
     Vertex_Out v;
-    v.position =float4(vertices[vertexID].position,1);
-    v.color = vertices[vertexID].color;
+    v.position =float4(vert.position,1);
+    v.color = vert.color;
     return v;
 }
 
