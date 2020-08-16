@@ -16,6 +16,7 @@
 		310C2CDD24E7FC5B0051F0A0 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CDC24E7FC5B0051F0A0 /* Renderer.swift */; };
 		310C2CDF24E80C8D0051F0A0 /* MyMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CDE24E80C8D0051F0A0 /* MyMetalView.swift */; };
 		310C2CE124E8198D0051F0A0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CE024E8198D0051F0A0 /* Shaders.metal */; };
+		310C2CE324E828050051F0A0 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CE224E828050051F0A0 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		310C2CDC24E7FC5B0051F0A0 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		310C2CDE24E80C8D0051F0A0 /* MyMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMetalView.swift; sourceTree = "<group>"; };
 		310C2CE024E8198D0051F0A0 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		310C2CE224E828050051F0A0 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				310C2CDC24E7FC5B0051F0A0 /* Renderer.swift */,
 				310C2CDE24E80C8D0051F0A0 /* MyMetalView.swift */,
 				310C2CE024E8198D0051F0A0 /* Shaders.metal */,
+				310C2CE224E828050051F0A0 /* Types.swift */,
 			);
 			path = SimpleGfxEngine;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				310C2CE124E8198D0051F0A0 /* Shaders.metal in Sources */,
 				310C2CDD24E7FC5B0051F0A0 /* Renderer.swift in Sources */,
 				310C2CCD24E7F56B0051F0A0 /* ViewController.swift in Sources */,
+				310C2CE324E828050051F0A0 /* Types.swift in Sources */,
 				310C2CDF24E80C8D0051F0A0 /* MyMetalView.swift in Sources */,
 				310C2CC924E7F56B0051F0A0 /* AppDelegate.swift in Sources */,
 				310C2CCB24E7F56B0051F0A0 /* SceneDelegate.swift in Sources */,
