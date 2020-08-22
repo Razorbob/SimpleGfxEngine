@@ -12,6 +12,6 @@ struct Vertex{
     var color: SIMD4<Float>
 }
 
-struct Constants{
-    var animateBy: Float = 0.5
+struct ModelConstants{
+    var modelMatrix = matrix_identity_float4x4
 }
