@@ -10,7 +10,7 @@ using namespace metal;
 
 
 struct Vertex_In{
-    simd_float3 position [[attribute(0)]];
+    simd_float4 position [[attribute(0)]];
     simd_float4 color [[attribute(1)]];
 };
 
@@ -23,10 +23,16 @@ struct ModelConstants {
     float4x4 modelMatrix;
 };
 
-vertex Vertex_Out basic_Vertex_Function(Vertex_In vert [[ stage_in ]], constant ModelConstants &modelConstants [[ buffer(1) ]] ) {
+struct SceneConstants {
+    float4x4 projectionMatrix;
+};
+
+vertex Vertex_Out basic_Vertex_Function(Vertex_In vert [[ stage_in ]],
+                                        constant ModelConstants &modelConstants [[ buffer(1) ]],
+                                        constant SceneConstants &sceneConstants [[ buffer(2) ]] ) {
     
     Vertex_Out v;
-    v.position = modelConstants.modelMatrix * float4(vert.position,1);
+    v.position = sceneConstants.projectionMatrix * modelConstants.modelMatrix * vert.position;
     v.color = vert.color;
     return v;
 }

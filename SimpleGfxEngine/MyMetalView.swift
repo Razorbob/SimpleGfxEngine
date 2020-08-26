@@ -26,7 +26,7 @@ class MyMetalView: MTKView{
         //Set the clear Color. Before the Frame gets drawn it is set to its clearColor
         self.clearColor = MTLClearColor(red: 1, green: 0.0000000001, blue: 0.5 , alpha: 1)
         self.depthStencilPixelFormat = .depth32Float
-        self.clearDepth = 1.0
+        //self.clearDepth = 1.0
         
         self.renderer = Renderer(device: self.device!)
         self.delegate = renderer

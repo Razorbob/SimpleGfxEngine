@@ -7,20 +7,48 @@
 
 import MetalKit
 
+func degreeToRadian(fromDegrees degrees: Float) -> Float{
+    return degrees * Float.pi / 180
+}
+
+func radianToDegree(fromRadians radian: Float) -> Float{
+    return radian *  180 / Float.pi
+}
+
 extension simd_float4x4{
     
-    mutating func scale(axis: SIMD3<Float>){
-        self = matrix_multiply(self,simd_diagonal_matrix(SIMD4<Float>(axis,1)))
+    //Perspective
+    init(AngleOfViewDegrees: Float, aspectRatio: Float, nearZ: Float, farZ: Float){
+        let AngleOfView = degreeToRadian(fromDegrees: AngleOfViewDegrees)
+        
+        let y = 1 / tan(AngleOfView*0.5)
+        let x = y / aspectRatio
+        let z = farZ / (nearZ - farZ)
+        let w = z * nearZ
+        
+        self = simd_diagonal_matrix(SIMD4<Float>(x,y,z,0))
+        self.columns.2.w = w
+        self.columns.3 = SIMD4<Float>(0,0,-1,0)
+
     }
     
+    mutating func scale(axis: SIMD3<Float>){
+        
+        self = matrix_multiply(self,simd_diagonal_matrix(SIMD4<Float>(axis,1)))
+        
+    }
+    /**
     mutating func scale(axis: SIMD4<Float>){
         self = matrix_multiply(self,simd_diagonal_matrix(SIMD4<Float>(axis)))
     }
+ */
     
     mutating func translate(direction: SIMD3<Float>){
+        print(direction)
         var result = matrix_identity_float4x4
         result.columns.3 = SIMD4<Float>(direction, 1)
         self = matrix_multiply(self, result)
+        print(self)
     }
     
     mutating func rotate(angle: Float, axis: SIMD3<Float>){
