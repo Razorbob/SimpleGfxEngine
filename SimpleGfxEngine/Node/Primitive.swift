@@ -9,6 +9,7 @@ import MetalKit
 
 class Primitive: Node{
     var renderPipelineState: MTLRenderPipelineState!
+    var depthStencilState: MTLDepthStencilState!
     
     var vertexBuffer: MTLBuffer!
     var indexBuffer: MTLBuffer!
@@ -23,6 +24,7 @@ class Primitive: Node{
         buildVertices()
         buildBuffers(device: device)
         buildPipeLineState(device: device)
+        buildDepthStencilState(device: device)
     }
     
     func buildVertices(){}
@@ -39,6 +41,8 @@ class Primitive: Node{
         
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        //renderPipelineDescriptor.stencilAttachmentPixelFormat = .floa
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
         
@@ -62,13 +66,30 @@ class Primitive: Node{
         }
     }
     
+    func buildDepthStencilState(device: MTLDevice){
+        let depthStencilDescriptor = MTLDepthStencilDescriptor()
+        depthStencilDescriptor.isDepthWriteEnabled = true
+        depthStencilDescriptor.depthCompareFunction = .less
+        self.depthStencilState = device.makeDepthStencilState(descriptor: depthStencilDescriptor)
+    }
+    
     func scale(axis: SIMD3<Float>){
         modelConstants.modelMatrix.scale(axis: axis)
+    }
+    func translate(direction: SIMD3<Float>){
+        modelConstants.modelMatrix.translate(direction: direction)
+    }
+    func rotate(angle: Float, axis: SIMD3<Float>){
+        modelConstants.modelMatrix.rotate(angle: angle, axis: axis)
     }
 
     
     override func render(commandEncoder: MTLRenderCommandEncoder) {
+        
+        commandEncoder.setDepthStencilState(depthStencilState)
         commandEncoder.setRenderPipelineState(renderPipelineState)
+        
+        
         super.render(commandEncoder: commandEncoder)
         
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
