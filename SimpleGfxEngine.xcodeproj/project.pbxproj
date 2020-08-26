@@ -14,6 +14,7 @@
 		3104FDAB24EEF7CB00280083 /* BasicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDAA24EEF7CB00280083 /* BasicScene.swift */; };
 		3104FDAD24EEF88B00280083 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDAC24EEF88B00280083 /* Triangle.swift */; };
 		3104FDB024EEFDF300280083 /* Maths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDAF24EEFDF300280083 /* Maths.swift */; };
+		3104FDB224F7068B00280083 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDB124F7068B00280083 /* Cube.swift */; };
 		310C2CC924E7F56B0051F0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CC824E7F56B0051F0A0 /* AppDelegate.swift */; };
 		310C2CCB24E7F56B0051F0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CCA24E7F56B0051F0A0 /* SceneDelegate.swift */; };
 		310C2CCD24E7F56B0051F0A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CCC24E7F56B0051F0A0 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		3104FDAA24EEF7CB00280083 /* BasicScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScene.swift; sourceTree = "<group>"; };
 		3104FDAC24EEF88B00280083 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		3104FDAF24EEFDF300280083 /* Maths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maths.swift; sourceTree = "<group>"; };
+		3104FDB124F7068B00280083 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		310C2CC524E7F56B0051F0A0 /* SimpleGfxEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGfxEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		310C2CC824E7F56B0051F0A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		310C2CCA24E7F56B0051F0A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				3104FDA424EEF07E00280083 /* Plane.swift */,
 				3104FDA824EEF50E00280083 /* Primitive.swift */,
 				3104FDAC24EEF88B00280083 /* Triangle.swift */,
+				3104FDB124F7068B00280083 /* Cube.swift */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				3104FDA024EEEEF900280083 /* Node.swift in Sources */,
 				310C2CE324E828050051F0A0 /* Types.swift in Sources */,
 				310C2CDF24E80C8D0051F0A0 /* MyMetalView.swift in Sources */,
+				3104FDB224F7068B00280083 /* Cube.swift in Sources */,
 				3104FDB024EEFDF300280083 /* Maths.swift in Sources */,
 				310C2CC924E7F56B0051F0A0 /* AppDelegate.swift in Sources */,
 				310C2CCB24E7F56B0051F0A0 /* SceneDelegate.swift in Sources */,
