@@ -15,6 +15,7 @@
 		3104FDAD24EEF88B00280083 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDAC24EEF88B00280083 /* Triangle.swift */; };
 		3104FDB024EEFDF300280083 /* Maths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDAF24EEFDF300280083 /* Maths.swift */; };
 		3104FDB224F7068B00280083 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDB124F7068B00280083 /* Cube.swift */; };
+		3104FDB424F774D400280083 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104FDB324F774D400280083 /* Renderable.swift */; };
 		310C2CC924E7F56B0051F0A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CC824E7F56B0051F0A0 /* AppDelegate.swift */; };
 		310C2CCB24E7F56B0051F0A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CCA24E7F56B0051F0A0 /* SceneDelegate.swift */; };
 		310C2CCD24E7F56B0051F0A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C2CCC24E7F56B0051F0A0 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		3104FDAC24EEF88B00280083 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		3104FDAF24EEFDF300280083 /* Maths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maths.swift; sourceTree = "<group>"; };
 		3104FDB124F7068B00280083 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		3104FDB324F774D400280083 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		310C2CC524E7F56B0051F0A0 /* SimpleGfxEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGfxEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		310C2CC824E7F56B0051F0A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		310C2CCA24E7F56B0051F0A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,13 @@
 			path = Maths;
 			sourceTree = "<group>";
 		};
+		3104FDB524F774E200280083 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		310C2CBC24E7F56B0051F0A0 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +118,8 @@
 		310C2CC724E7F56B0051F0A0 /* SimpleGfxEngine */ = {
 			isa = PBXGroup;
 			children = (
+				3104FDB324F774D400280083 /* Renderable.swift */,
+				3104FDB524F774E200280083 /* Other */,
 				3104FDAE24EEFDE200280083 /* Maths */,
 				3104FDA124EEF02900280083 /* Scene */,
 				3104FD9E24EEEEE500280083 /* Node */,
@@ -212,6 +223,7 @@
 				3104FDB024EEFDF300280083 /* Maths.swift in Sources */,
 				310C2CC924E7F56B0051F0A0 /* AppDelegate.swift in Sources */,
 				310C2CCB24E7F56B0051F0A0 /* SceneDelegate.swift in Sources */,
+				3104FDB424F774D400280083 /* Renderable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

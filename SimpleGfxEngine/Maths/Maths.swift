@@ -44,11 +44,11 @@ extension simd_float4x4{
  */
     
     mutating func translate(direction: SIMD3<Float>){
-        print(direction)
+        //print(direction)
         var result = matrix_identity_float4x4
         result.columns.3 = SIMD4<Float>(direction, 1)
         self = matrix_multiply(self, result)
-        print(self)
+        //print(self)
     }
     
     mutating func rotate(angle: Float, axis: SIMD3<Float>){

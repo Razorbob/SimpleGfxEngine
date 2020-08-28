@@ -12,11 +12,20 @@ class Renderer: NSObject{
     
     var commandQueue: MTLCommandQueue!
     var scene: Scene!
+    var depthStencilState: MTLDepthStencilState!
     
     init(device: MTLDevice){
         super.init()
         self.commandQueue = device.makeCommandQueue()
         self.scene = BasicScene(device: device)
+        buildDepthStencilState(device: device)
+    }
+    
+    func buildDepthStencilState(device: MTLDevice){
+        let depthStencilDescriptor = MTLDepthStencilDescriptor()
+        depthStencilDescriptor.isDepthWriteEnabled = true
+        depthStencilDescriptor.depthCompareFunction = .less
+        self.depthStencilState = device.makeDepthStencilState(descriptor: depthStencilDescriptor)
     }
 }
 
@@ -31,6 +40,7 @@ extension Renderer: MTKViewDelegate{
         
         let commandBuffer = commandQueue.makeCommandBuffer()
         let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+        commandEncoder!.setDepthStencilState(depthStencilState)
         
         let deltaTime = 1 / Float(view.preferredFramesPerSecond)
         (scene as! BasicScene).render(commandEncoder: commandEncoder!, deltaTime: deltaTime)
