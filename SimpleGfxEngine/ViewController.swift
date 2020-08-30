@@ -22,6 +22,7 @@ class ViewController: UIViewController{
     
     @IBAction func swWireFrameToggle(_ sender: Any) {
         mainMetalView.toggleWireFrame(wireFrameOn: swWireFrame.isOn)
+        
     }
 }
 
