@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17140" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17115"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,16 +12,39 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleGfxEngine" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MyMetalView" customModule="SimpleGfxEngine" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXt-g8-Pbp" customClass="MyMetalView" customModule="SimpleGfxEngine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="974"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vBk-fF-cFL">
+                                <rect key="frame" x="52" y="982" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="swWireFrameToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="azG-Gt-uRC"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cXt-g8-Pbp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BfV-37-Luc"/>
+                            <constraint firstItem="cXt-g8-Pbp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gn4-91-oqO"/>
+                            <constraint firstItem="cXt-g8-Pbp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mev-Dr-qaq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cXt-g8-Pbp" secondAttribute="bottom" constant="30" id="gPd-pQ-A63"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainMetalView" destination="cXt-g8-Pbp" id="4mM-fp-L6c"/>
+                        <outlet property="swWireFrame" destination="vBk-fF-cFL" id="MYc-LW-Pcb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="54"/>
+            <point key="canvasLocation" x="-214.34846266471448" y="53.90625"/>
         </scene>
     </scenes>
     <resources>

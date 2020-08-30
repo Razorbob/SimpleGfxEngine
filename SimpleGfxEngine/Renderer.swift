@@ -13,6 +13,7 @@ class Renderer: NSObject{
     var commandQueue: MTLCommandQueue!
     var scene: Scene!
     var depthStencilState: MTLDepthStencilState!
+    var wireFrameOn: Bool = false
     
     init(device: MTLDevice){
         super.init()
@@ -26,6 +27,10 @@ class Renderer: NSObject{
         depthStencilDescriptor.isDepthWriteEnabled = true
         depthStencilDescriptor.depthCompareFunction = .less
         self.depthStencilState = device.makeDepthStencilState(descriptor: depthStencilDescriptor)
+    }
+    
+    func toggleWireFrame(wireFrameOn: Bool){
+        self.wireFrameOn = wireFrameOn
     }
 }
 
@@ -41,6 +46,8 @@ extension Renderer: MTKViewDelegate{
         let commandBuffer = commandQueue.makeCommandBuffer()
         let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         commandEncoder!.setDepthStencilState(depthStencilState)
+        
+        wireFrameOn ? commandEncoder?.setTriangleFillMode(.lines): commandEncoder?.setTriangleFillMode(.fill)
         
         let deltaTime = 1 / Float(view.preferredFramesPerSecond)
         (scene as! BasicScene).render(commandEncoder: commandEncoder!, deltaTime: deltaTime)

@@ -15,7 +15,7 @@ class MyMetalView: MTKView{
     required init(coder: NSCoder) {
         super.init(coder: coder)
         
-        print("Jebemti")
+        print("My Metal View started")
         
         // create the GPU Representation
         self.device = MTLCreateSystemDefaultDevice()
@@ -31,5 +31,9 @@ class MyMetalView: MTKView{
         self.renderer = Renderer(device: self.device!)
         self.delegate = renderer
         
+    }
+    
+    func toggleWireFrame(wireFrameOn: Bool){
+        renderer.toggleWireFrame(wireFrameOn: wireFrameOn)
     }
 }

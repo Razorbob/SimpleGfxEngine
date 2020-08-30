@@ -11,10 +11,17 @@ import UIKit
 class ViewController: UIViewController{
     
     
+    @IBOutlet weak var mainMetalView: MyMetalView!
+    @IBOutlet weak var swWireFrame: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        swWireFrame.isOn = false
         
     }
     
+    @IBAction func swWireFrameToggle(_ sender: Any) {
+        mainMetalView.toggleWireFrame(wireFrameOn: swWireFrame.isOn)
+    }
 }
 
